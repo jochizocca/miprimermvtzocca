@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from mimvt.views import familiar
+from mimvt.views import familiar, saluda
 from mimvt.views import direccion, profesion
 
 
@@ -27,6 +27,7 @@ urlpatterns = [
     path('familiar/<nombre>/<apellido>/<dni>', familiar),
     path('profesion/<profesion>/', profesion),
     path('direccion/<calle>/<localidad>/<cp>/', direccion),
+    path('inicio/', saluda),
     
 ]
 

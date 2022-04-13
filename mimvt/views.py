@@ -1,3 +1,5 @@
+from django.template import Context
+from django.template import Template
 from django.shortcuts import render
 
 from django.forms import CharField
@@ -5,6 +7,13 @@ from django.http import HttpResponse
 
 from .models import direcciones, familiares, profesiones
 
+
+def saluda(request):
+    mihtml=open("C:/Users/Carucha/Desktop/Mi primer MVTZocca/ProyectoMVT/mimvt/Templates.html")
+    plantilla=Template(mihtml.read())
+    mihtml.close()
+    micontexto=Context()
+    return HttpResponse(plantilla.render(micontexto))
 
 
 
